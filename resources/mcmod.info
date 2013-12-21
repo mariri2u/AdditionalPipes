@@ -1,0 +1,21 @@
+[
+{
+  "modid": "AdditionalPipes",
+  "name": "Additional Pipes",
+  "description": "Adding many essential pipes for building the factory.",
+  "version": "",
+  "credits": "Created by Zeldo",
+  "authors": [ "Zeldo", "DaStormBringer", "Kyprus", "Anonymous" ],
+  "logoFile": "",
+  "url": "https://dl.dropbox.com/u/28984230/MC/ADP/main.html",
+  "updateUrl": "",
+  "parent":"",
+  "screenshots": [],
+  "requiredMods": [
+    "Forge",
+    "BuildCraft|Core"
+  ],
+  "dependencies": [
+  ]
+}
+]
