@@ -15,6 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 import additionalpipes.AdditionalPipes;
 import additionalpipes.inventory.APGuiIds;
+import additionalpipes.rescueapi.RescueApi;
 import buildcraft.api.tools.IToolWrench;
 import buildcraft.core.TileBuffer;
 import buildcraft.core.proxy.CoreProxy;
@@ -86,7 +87,8 @@ public abstract class PipeLogicDistributor {
 		if (force || pipe.container.getBlockMetadata() != side.ordinal()) {
 			pipe.container.worldObj.setBlockMetadataWithNotify(pipe.container.xCoord, pipe.container.yCoord, pipe.container.zCoord, side.ordinal(), 3);
 			curTick = 0;
-			pipe.container.markBlockForUpdate();
+//			pipe.container.markBlockForUpdate();
+			RescueApi.markBlockForUpdate(pipe.container);
 		} else if (curTick >= distData[side.ordinal()]) {
 			curTick = 0;
 		}

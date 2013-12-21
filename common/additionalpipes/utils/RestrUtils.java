@@ -14,7 +14,7 @@ import buildcraft.core.utils.StringUtils;
 public class RestrUtils {
 
 	public static void accessDenied(EntityPlayer player, String owner) {
-		player.sendChatToPlayer(ChatMessageComponent.func_111066_d("\u00A7c" + String.format(StringUtils.localize("chat.edit.denied"), owner)));
+		player.sendChatToPlayer(ChatMessageComponent.createFromText("\u00A7c" + String.format(StringUtils.localize("chat.edit.denied"), owner)));
 	}
 
 	public static boolean tryAccess(IRestrictedTile tile, EntityPlayer player) {

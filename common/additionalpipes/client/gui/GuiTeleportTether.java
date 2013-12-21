@@ -33,7 +33,7 @@ public class GuiTeleportTether extends GuiRestrictedTile<ContainerTeleportTether
 	protected static final RenderItem itemRenderer = new RenderItem();
 
 	public GuiTeleportTether(EntityPlayer player, TileTeleportTether tether) {
-		super(new ContainerTeleportTether(player, tether), null);
+		super(new ContainerTeleportTether(player, tether), null, TEXTURE);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class GuiTeleportTether extends GuiRestrictedTile<ContainerTeleportTether
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.func_110577_a(TEXTURE);
+		mc.renderEngine.bindTexture(TEXTURE);
 
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 	}

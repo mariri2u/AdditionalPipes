@@ -22,8 +22,8 @@ import net.minecraft.world.World;
 import additionalpipes.AdditionalPipes;
 import additionalpipes.block.components.BlockRestricted;
 import additionalpipes.inventory.APGuiIds;
+import additionalpipes.rescueapi.RescueApi;
 import additionalpipes.tileentity.TileTeleportTether;
-import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.proxy.CoreProxy;
 
 import com.google.common.collect.Lists;
@@ -42,7 +42,8 @@ public class BlockTeleportTether extends BlockRestricted {
 	public BlockTeleportTether(int blockID) {
 		super(blockID, Material.cloth);
 		setHardness(0.2F);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+//		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(RescueApi.getCreativeTabs());
 	}
 
 	public static int[] getDirectionsForStack(ItemStack stack) {

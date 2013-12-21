@@ -13,6 +13,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 import additionalpipes.client.texture.PipeIconProvider;
+import additionalpipes.rescueapi.RescueApi;
 import buildcraft.api.core.IIconProvider;
 import buildcraft.api.core.Position;
 import buildcraft.api.gates.IAction;
@@ -49,12 +50,19 @@ public class PipeItemsAdvancedInsertion extends Pipe<PipeTransportItems> impleme
 
 	@Override
 	public void readjustSpeed(TravelingItem item) {
-		if (item.getSpeed() > Utils.pipeNormalSpeed) {
-			item.setSpeed(item.getSpeed() - Utils.pipeNormalSpeed / 2.0F);
+//		if (item.getSpeed() > Utils.pipeNormalSpeed) {
+//			item.setSpeed(item.getSpeed() - Utils.pipeNormalSpeed / 2.0F);
+//		}
+//
+//		if (item.getSpeed() < Utils.pipeNormalSpeed) {
+//			item.setSpeed(Utils.pipeNormalSpeed);
+//		}
+		if (item.getSpeed() > RescueApi.getPipeNormalSpeed()) {
+			item.setSpeed(item.getSpeed() - RescueApi.getPipeNormalSpeed() / 2.0F);
 		}
 
-		if (item.getSpeed() < Utils.pipeNormalSpeed) {
-			item.setSpeed(Utils.pipeNormalSpeed);
+		if (item.getSpeed() < RescueApi.getPipeNormalSpeed()) {
+			item.setSpeed(RescueApi.getPipeNormalSpeed());
 		}
 	}
 

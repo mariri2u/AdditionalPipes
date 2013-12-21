@@ -16,6 +16,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 import additionalpipes.AdditionalPipes;
 import additionalpipes.client.texture.PipeIconProvider;
+import additionalpipes.rescueapi.RescueApi;
 import additionalpipes.utils.APUtils;
 import buildcraft.api.core.IIconProvider;
 import buildcraft.api.core.Position;
@@ -129,7 +130,8 @@ public class PipeItemsTeleport extends Pipe<PipeTransportItems> implements IPipe
 		Collections.shuffle(connectedPipes, container.worldObj.rand);
 		for (PipeItemsTeleport destPipe : connectedPipes) {
 			if (destPipe.canReceiveItem(item) && logic.useEnergy(energy)) {
-				item.setPosition(destPipe.container.xCoord + 0.5, destPipe.container.yCoord + Utils.getPipeFloorOf(item.getItemStack()), destPipe.container.zCoord + 0.5);
+//				item.setPosition(destPipe.container.xCoord + 0.5, destPipe.container.yCoord + Utils.getPipeFloorOf(item.getItemStack()), destPipe.container.zCoord + 0.5);
+				item.setPosition(destPipe.container.xCoord + 0.5, destPipe.container.yCoord + RescueApi.getPipeFloorOf(), destPipe.container.zCoord + 0.5);
 				destPipe.transport.injectItem(item, ForgeDirection.UNKNOWN);
 				pipe.items.scheduleRemoval(item);
 				return;

@@ -28,7 +28,7 @@ public class GuiAdvancedWoodPipe extends GuiAdditionalPipes<ContainerAdvancedWoo
 	private GuiButton buttonToggle;
 
 	public GuiAdvancedWoodPipe(IInventory playerInventory, PipeLogicAdvancedWood filterInventory) {
-		super(new ContainerAdvancedWoodPipe(playerInventory, filterInventory), filterInventory.getFilters());
+		super(new ContainerAdvancedWoodPipe(playerInventory, filterInventory), filterInventory.getFilters(), TEXTURE);
 		filterIInventory = filterInventory.getFilters();
 		xSize = 176;
 		ySize = 158;
@@ -57,7 +57,7 @@ public class GuiAdvancedWoodPipe extends GuiAdditionalPipes<ContainerAdvancedWoo
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int x, int y) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.func_110577_a(TEXTURE);
+		mc.renderEngine.bindTexture(TEXTURE);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 	}
 

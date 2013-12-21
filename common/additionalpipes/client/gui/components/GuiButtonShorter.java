@@ -26,7 +26,7 @@ public class GuiButtonShorter extends GuiButton {
 	public void drawButton(Minecraft minecraft, int i, int j) {
 		if (drawButton) {
 			FontRenderer fontrenderer = minecraft.fontRenderer;
-			minecraft.renderEngine.func_110577_a(field_110332_a);
+			minecraft.renderEngine.bindTexture(buttonTextures);
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			field_82253_i = i >= xPosition && j >= yPosition && i < xPosition + width && j < yPosition + height;
 			int k = getHoverState(field_82253_i);

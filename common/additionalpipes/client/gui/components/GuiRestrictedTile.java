@@ -8,6 +8,7 @@ package additionalpipes.client.gui.components;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import additionalpipes.AdditionalPipes;
 import additionalpipes.api.AccessRule;
 import additionalpipes.client.gui.GuiAdditionalPipes;
@@ -26,7 +27,7 @@ public abstract class GuiRestrictedTile<T extends ContainerRestrictedTile> exten
 			maxHeight = 72;
 			overlayColor = 0xffffff;
 			headerTitle = "gui.restriction";
-			icon = Item.field_111212_ci.getIconFromDamage(0);
+			icon = Item.nameTag.getIconFromDamage(0);
 			if (!AdditionalPipes.remoteDisablePermissions) {
 				addButton(0, 14, 52);
 			}
@@ -63,8 +64,8 @@ public abstract class GuiRestrictedTile<T extends ContainerRestrictedTile> exten
 
 	}
 
-	public GuiRestrictedTile(T container, IInventory inventory) {
-		super(container, inventory);
+	public GuiRestrictedTile(T container, IInventory inventory, ResourceLocation texture) {
+		super(container, inventory, texture);
 	}
 
 	@Override

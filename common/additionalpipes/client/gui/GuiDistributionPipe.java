@@ -38,7 +38,7 @@ public class GuiDistributionPipe extends GuiAdditionalPipes<ContainerDistributio
 	private ItemStack indicator;
 
 	public GuiDistributionPipe(PipeLogicDistributor logic) {
-		super(new ContainerDistributionPipe(logic), null);
+		super(new ContainerDistributionPipe(logic), null, TEXTURE);
 		this.logic = logic;
 		xSize = 115;
 		ySize = 130;
@@ -84,7 +84,7 @@ public class GuiDistributionPipe extends GuiAdditionalPipes<ContainerDistributio
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int x, int y) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.func_110577_a(TEXTURE);
+		mc.renderEngine.bindTexture(TEXTURE);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 	}
 

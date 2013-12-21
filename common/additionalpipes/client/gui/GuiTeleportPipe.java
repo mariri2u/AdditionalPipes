@@ -61,7 +61,7 @@ public class GuiTeleportPipe extends GuiRestrictedTile<ContainerTeleportPipe> im
 	private int[] showingFreqs = ArrayUtils.EMPTY_INT_ARRAY;
 
 	public GuiTeleportPipe(PipeLogicTeleport logic) {
-		super(new ContainerTeleportPipe(logic), null);
+		super(new ContainerTeleportPipe(logic), null, TEXTURE);
 		this.logic = logic;
 		xSize = 244;
 		ySize = 116;
@@ -195,7 +195,7 @@ public class GuiTeleportPipe extends GuiRestrictedTile<ContainerTeleportPipe> im
 	@Override
 	public void overlayBackground(int xPos, int yPos, int width, int height) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.func_110577_a(TEXTURE);
+		mc.renderEngine.bindTexture(TEXTURE);
 
 		drawTexturedModalRect(xPos, yPos, xPos - guiLeft, yPos - guiTop, width, height);
 	}

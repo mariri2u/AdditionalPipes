@@ -55,11 +55,11 @@ public class TileTeleportTether extends TileBuildCraft implements IRestrictedTil
 
 	private void warning(String message) {
 		if (placedBy != null) {
-			placedBy.sendChatToPlayer(ChatMessageComponent.func_111066_d(message));
+			placedBy.sendChatToPlayer(ChatMessageComponent.createFromText(message));
 		}
 		EntityPlayer ownerPlayer = MinecraftServer.getServer().getConfigurationManager().getPlayerForUsername(owner);
 		if (ownerPlayer != null && placedBy != ownerPlayer) {
-			ownerPlayer.sendChatToPlayer(ChatMessageComponent.func_111066_d(message));
+			ownerPlayer.sendChatToPlayer(ChatMessageComponent.createFromText(message));
 		}
 		AdditionalPipes.logger.warning(message);
 	}

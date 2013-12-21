@@ -27,7 +27,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public abstract class GuiAdditionalPipes<T extends AdditionalPipesContainer> extends GuiAdvancedInterface {
 
-	private static final ResourceLocation ITEMS_TEXTURE = TextureMap.field_110576_c;
+	private static final ResourceLocation ITEMS_TEXTURE = TextureMap.locationItemsTexture;
 
 	protected static class ButtonInfo {
 
@@ -64,7 +64,7 @@ public abstract class GuiAdditionalPipes<T extends AdditionalPipesContainer> ext
 			drawBackground(x, y);
 
 			// Draw icon
-			Minecraft.getMinecraft().renderEngine.func_110577_a(ITEMS_TEXTURE);
+			Minecraft.getMinecraft().renderEngine.bindTexture(ITEMS_TEXTURE);
 			drawIcon(icon, x + 3, y + 3);
 
 			if (!isFullyOpened()) {
@@ -104,7 +104,7 @@ public abstract class GuiAdditionalPipes<T extends AdditionalPipesContainer> ext
 		protected void drawIcon(int id, Icon icon, int x, int y) {
 			ButtonInfo info = buttons.get(id);
 			if (info != null && info.drawButton) {
-				Minecraft.getMinecraft().renderEngine.func_110577_a(ITEMS_TEXTURE);
+				Minecraft.getMinecraft().renderEngine.bindTexture(ITEMS_TEXTURE);
 				drawIcon(icon, x + info.x, y + info.y);
 			}
 		}
@@ -135,8 +135,8 @@ public abstract class GuiAdditionalPipes<T extends AdditionalPipesContainer> ext
 
 	public T clientProps;
 
-	public GuiAdditionalPipes(T container, IInventory inventory) {
-		super(container, inventory);
+	public GuiAdditionalPipes(T container, IInventory inventory, ResourceLocation texture) {
+		super(container, inventory, texture);
 		clientProps = container;
 	}
 

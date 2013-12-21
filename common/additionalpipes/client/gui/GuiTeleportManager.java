@@ -130,7 +130,7 @@ public class GuiTeleportManager extends GuiRestrictedTile<ContainerTeleportManag
 	private static final int MAPS_COL = 3;
 
 	public GuiTeleportManager(IInventory playerInventory, TileTeleportManager manager) {
-		super(new ContainerTeleportManager(playerInventory, manager), null);
+		super(new ContainerTeleportManager(playerInventory, manager), null, TEXTURE);
 		xSize = 176;
 		ySize = 222;
 	}
@@ -158,7 +158,7 @@ public class GuiTeleportManager extends GuiRestrictedTile<ContainerTeleportManag
 		RenderHelper.disableStandardItemLighting();
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glDisable(GL11.GL_DEPTH_TEST);
-		mc.renderEngine.func_110577_a(MAP_TEXTURE);
+		mc.renderEngine.bindTexture(MAP_TEXTURE);
 
 		GL11.glPushMatrix();
 		Tessellator var4 = Tessellator.instance;
@@ -203,7 +203,7 @@ public class GuiTeleportManager extends GuiRestrictedTile<ContainerTeleportManag
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.func_110577_a(TEXTURE);
+		mc.renderEngine.bindTexture(TEXTURE);
 
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		if (clientProps.propMaps.value.length == 0) {
@@ -243,7 +243,7 @@ public class GuiTeleportManager extends GuiRestrictedTile<ContainerTeleportManag
 
 		RenderHelper.disableStandardItemLighting();
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.func_110577_a(CREATIVE_TEXTURE);
+		mc.renderEngine.bindTexture(CREATIVE_TEXTURE);
 		drawTexturedModalRect(xSize - 20, 18 + (int) (93 * scrollPercent), 232 + (needsScrollBars() ? 0 : 12), 0, 12, 15);
 
 		theMap = -1;

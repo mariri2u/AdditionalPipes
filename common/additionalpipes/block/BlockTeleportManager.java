@@ -22,11 +22,11 @@ import additionalpipes.AdditionalPipes;
 import additionalpipes.api.AccessRule;
 import additionalpipes.block.components.BlockRestricted;
 import additionalpipes.inventory.APGuiIds;
+import additionalpipes.rescueapi.RescueApi;
 import additionalpipes.tileentity.TileTeleportManager;
 import additionalpipes.tileentity.TileTeleportManagerEnergy;
 import additionalpipes.utils.APUtils;
 import buildcraft.api.tools.IToolWrench;
-import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.inventory.InvUtils;
 import buildcraft.core.proxy.CoreProxy;
 import buildcraft.core.utils.Utils;
@@ -44,7 +44,8 @@ public class BlockTeleportManager extends BlockRestricted {
 	public BlockTeleportManager(int blockID) {
 		super(blockID, Material.iron);
 		setHardness(30.0F);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+//		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(RescueApi.getCreativeTabs());
 	}
 
 	@Override
