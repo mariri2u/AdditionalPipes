@@ -28,6 +28,7 @@ import buildcraft.transport.IPipeTransportItemsHook;
 import buildcraft.transport.Pipe;
 import buildcraft.transport.PipeTransportItems;
 import buildcraft.transport.TravelingItem;
+import buildcraft.transport.TravelerSet;
 
 import com.google.common.collect.Lists;
 
